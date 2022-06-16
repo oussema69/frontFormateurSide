@@ -1,0 +1,70 @@
+<div>
+  <hr>
+  nombre de visioConference
+
+  <form>
+    <div class="row">
+      <div class="col">
+        <input type="date" name="db" [(ngModel)]="db" class="form-control" placeholder="Date debut">
+      </div>
+      <div class="col">
+        <input type="date" class="form-control" name="db" [(ngModel)]="df" placeholder="date fin">
+      </div>
+      <div class="col">
+        <button type="button" class="btn btn-primary" (click)="getnb()">compter</button>
+      </div>
+
+      <div class="col">
+        <input type="text" class="form-control" [(ngModel)]="nbr" name="nbr" disabled>
+      </div>
+    </div>
+  </form>
+</div>
+<!---->
+<div>
+  <hr>
+<div class="row " style="margin-top:3%" >
+<div class="chart-wrapper col " >
+  <div> <input type="number" [(ngModel)]="year"/>
+    <button (click)="get()">compter<i class="fa fa-bar-chart" aria-hidden="true"></i></button>
+  <canvas baseChart
+          [datasets]="barChartData"
+          [labels]="barChartLabels"
+          [options]="barChartOptions"
+          [plugins]="barChartPlugins"
+          [legend]="barChartLegend"
+          [chartType]="barChartType">
+  </canvas>
+</div>
+</div>
+
+    <div class="col" style="margin-top:2%">
+      <div class="card radius-10 border-start border-0 border-3 border-info" style="margin-top:5%">
+        <div class="card-body">
+          <div class="d-flex align-items-center">
+            <div>
+              <p class="mb-0 text-secondary">Nombre totale de visioconference</p>
+              <h4 class="my-1 text-info">{{nbrvis}} visioconference</h4>
+            </div>
+            <div class="widgets-icons-2 rounded-circle bg-gradient-scooter text-white ms-auto"><i class="fa fa-video-camera" aria-hidden="true"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:10%" >
+        <div class="card radius-10 border-start border-0 border-3 border-info">
+          <div class="card-body">
+            <div class="d-flex align-items-center">
+              <div>
+                <p class="mb-0 text-secondary">nombre d'heure de visioconference</p>
+                <h4 class="my-1 text-info">{{nbrh}} Heures</h4>
+              </div>
+              <div class="widgets-icons-2 rounded-circle bg-gradient-scooter text-white ms-auto"><i class="fa fa-shopping-cart"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+</div>

@@ -1,0 +1,10 @@
+<div class="single-story hay" (click)="go()">
+  <div class="story-dp bay ">
+    <img src="{{fileUrl+apprenant.logo}}" width="30px">
+  </div>
+  <div class="story-author lay">
+    <p class="name">{{apprenant.name}} {{apprenant.lastname}}
+      <span class="badge rounded-pill badge-notification bg-danger" *ngIf="countmsg>0" >{{countmsg}}</span>
+    </p>
+  </div>
+</div>

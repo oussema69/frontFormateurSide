@@ -1,0 +1,114 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+
+            <form  (ngSubmit)="updateFormateur()" novalidate>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="profile-img">
+                            <img [src]="fileUrl+formateur.logo" alt=""/>
+                            <div class="file btn btn-lg btn-primary">
+                               <label for="logo"> Change Photo</label>
+                                <input class="form-control"  (change)="onImageUpload($event)" id="logo"  type="file" accept="image/png, image/jpeg" placeholder="choissiser votre logo" name="logo"   >
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="profile-head">
+                                    <h2>
+                                   {{formateur.name}}{{" " }}{{formateur.lastname}}
+                                    </h2>
+                                    <h6>
+                                       {{formateur.spec}}
+                                    </h6>
+                
+                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Modifier</a>
+                                </li>
+                              
+                            </ul>
+                        </div>
+                    </div>
+                  
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="profile-work">
+                            <p>Nom</p>
+                        <label>{{formateur.lastname}}</label>  <br/> 
+                        <p>Prenom</p>
+                        <label>{{formateur.name}}</label>  <br/> 
+                        <p>Adresse mail</p>
+                        <label>{{formateur.email}}</label>  <br/> 
+                        <p>Télephone</p>
+                        <label>{{formateur.tel}}</label>  <br/> 
+                        <p>Spécilaité</p>
+                        <label>{{formateur.spec}}</label>  <br/> 
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="tab-content profile-tab" id="myTabContent">
+                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Nom</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input type="text"  class="form-control" name="name"[(ngModel)]="formateur.name"><br>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Name</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input type="text"  class="form-control" name="lastname"[(ngModel)]="formateur.lastname"><br>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Email</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input type="text"  class="form-control" name="email"[(ngModel)]="formateur.email"><br>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>MOt de Passe</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                       
+                                              
+                                  <input     [type]="show_button ? 'text' : 'password'" class="form-control" name="password"[(ngModel)]="formateur.password"><i [class]="show_eye ? 'fa fa-eye' : 'fa fa-eye-slash'" (click)="showPassword()"></i><br>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Phone</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input type="text"  class="form-control" name="tel"[(ngModel)]="formateur.tel"><br>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Profession</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input type="text"   class="form-control" name="spec"[(ngModel)]="formateur.spec"><br>
+                                            </div>
+                                        </div>
+                            </div> <div class="row">
+                            <div class="col-md-2">
+                                <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Modifier"/>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </form>           
+        

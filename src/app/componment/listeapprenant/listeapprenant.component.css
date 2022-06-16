@@ -1,0 +1,11 @@
+.hay{
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.lay{
+  margin-bottom: 0px;
+  font-weight: 600;
+  font-size: 13px;
+}
+

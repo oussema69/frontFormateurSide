@@ -1,0 +1,114 @@
+<!-- Navbar-->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid justify-content-between">
+      <!-- Left elements -->
+      <div class="d-flex">
+        <!-- Brand -->
+
+          <h2 class="navbar-brand me-2 mb-1 d-flex align-items-center">First Step</h2>
+
+
+
+      </div>
+      <!-- Left elements -->
+
+      <!-- Center elements -->
+      <ul class="navbar-nav flex-row  d-md-flex">
+        <li class="nav-item me-3 me-lg-1 active">
+          <a routerLink="stat"  style="padding-left: 10px; padding-right: 10px;  margin-left: 10px;">
+            <span><fa-icon   class="fa-xl"[icon]="faHome"></fa-icon ></span>
+             </a>
+        </li>
+
+        <li class="nav-item me-3 me-lg-1">
+          <a routerLink="plannig" style="padding-left: 10px; padding-right: 10px;  margin-left: 10px;" >
+            <span><fa-icon  class="fa-xl" [icon]="faCalendar" routerLink="plannig" ></fa-icon ></span>
+
+          </a>
+        </li>
+
+        <li class="nav-item dropdown me-3 me-lg-1">
+            <a
+            routerLink="message" style="padding-left: 10px; padding-right: 10px;  margin-left: 10px;"
+            >
+
+              <fa-icon  class="fa-xl" [icon]="faComments"></fa-icon >
+              <span class="badge rounded-pill badge-notification bg-danger" *ngIf="msgnbr>0">{{msgnbr}}</span>
+            </a>
+            <li mdbDropdown class="nav-item dropdown me-3 me-lg-1">
+                <a
+                 style="padding-left: 10px; padding-right: 10px;  margin-left: 10px;"
+                 ><fa-icon  class="fa-xl" (click)="open(mymodal)" [icon]="faBell"></fa-icon >
+
+                  <span class="badge rounded-pill badge-notification bg-danger" *ngIf="notifvis?.length>0">{{notifvis?.length}}</span>
+                </a>
+
+              </li>
+
+      </ul>
+      <!-- Center elements -->
+
+      <!-- Right elements -->
+      <ul class="navbar-nav flex-row">
+
+
+        <li class="nav-item me-3 me-lg-1" (click)="goto(formateur._id)">
+
+
+      <img
+      [src]="fileUrl+formateur.logo"
+
+        class="rounded-circle"
+        height="22"
+        alt=""
+        loading="lazy"
+      /> <li  class="nav-item dropdown me-3 me-lg-1" (click)="goto(formateur._id)">
+      <h3  (click)="goto(formateur._id)">{{formateur.name}}{{" "}}{{formateur.lastname}}</h3>
+
+          </li>
+          <li  class="nav-item dropdown me-3 me-lg-1">
+
+              <span (click)="logout()">   <fa-icon class="fa-xl" [icon]="faThin"></fa-icon ></span>
+
+          </li>
+
+      </ul>
+      <!-- Right elements -->
+    </div>
+  </nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ng-template #mymodal let-modal >
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Vos notification</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">×</span>
+    </button>
+  </div>
+  <ul class="list-group">
+  <li class="list-group-item " *ngFor="let item of notifD">{{item.title}} nommée <br> {{item.name}} crée le:
+    {{item.date.substr(0,10)}} {{item.date.substr(11,8)}}<br>
+  affecté le {{item.dateaff.substr(0,10)}} {{item.dateaff.substr(11,8)}}
+  </li>
+
+</ul>
+
+
+
+</ng-template>
+
+

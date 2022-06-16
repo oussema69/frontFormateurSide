@@ -1,0 +1,7 @@
+
+{
+  "/api": {
+    "target": "https://api.enablex.io/video/v2/rooms",
+    "secure": false
+  }
+}
